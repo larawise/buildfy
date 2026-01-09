@@ -1,0 +1,5 @@
+<!-- SRYLIUS :: JAVASCRIPTS -->
+@foreach ($bodyScripts as $script)
+{!! Assetify::builder()->script($script['src'] . Assetify::version(), $script['attributes']) !!}
+@endforeach
+<!-- SRYLIUS :: JAVASCRIPTS -->

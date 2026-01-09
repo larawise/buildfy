@@ -1,0 +1,13 @@
+<!-- SRYLIUS :: STYLESHEETS -->
+@foreach ($styles as $style)
+{!! Assetify::builder()->style($style['src'] . Assetify::version(), $style['attributes']) !!}
+@endforeach
+<!-- SRYLIUS :: STYLESHEETS -->
+
+@foreach ($headScripts as $script)
+{!! Assetify::builder()->script($script['src'] . Assetify::version(), $script['attributes']) !!}
+
+@if (! empty($script['fallback']))
+<script>window.{!! $script['fallback'] !!} || document.write('<script src="{{ $script['fallbackURL'] }}"><\/script>')</script>
+@endif
+@endforeach
